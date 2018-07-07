@@ -2,7 +2,6 @@ package com.android.team13.ssk1;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -16,13 +15,11 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,9 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+        setTitle("Welcome to SSK Login");
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
@@ -319,18 +315,29 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public void next(String type,String id){
+    public void next(String type,int id){
         Intent i;
-        if (type.equals("fss"))
-        i= new Intent(this, MainActivity.class);
-        /*else if (type.equals("doct"))
-            i=new Intent(this,DocActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("id",id);
+        //bundle.putString("type", type);
+
+          //Send the officer id detail to next activity
+
+        if (type.equals("doct"))
+        {i= new Intent(this, DocActivity.class);
+            i.putExtras(bundle);
+        startActivity(i);
+        }
+        /*else if (type.equals("fss"))
+            {i=new Intent(this,MainActivity.class);i.putExtras(bundle);}
         else
-            i=new Intent(this,Re)*/
+            {i=new Intent(this,Re)*/
+
 
     }
-    String ip = "ip:port", db = "team13", un = "", pass = "";
     private Connection con;
+    /*String ip = "ip:port", db = "team13", un = "", pass = "";
+
     @SuppressLint("NewApi")
     public  void connectionclass(String user, String password, String database, String server)
     {
@@ -357,13 +364,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             Log.e("error here 3 : ", e.getMessage());
         }
         con= connection;
-    }
+    }*/
     public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;
         String z;
-        String typ,id;
+        String typ;int id;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -376,7 +383,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             boolean success=false;
             try {
                 System.out.println("cheching login");
-                connectionclass(un, pass, db, ip);
+                con=new Connect().getCon();
+                //connectionclass(un, pass, db, ip);
                 if (con == null) {
                     z = "Check Your Internet Access!";
                 } else {
@@ -389,7 +397,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         z = "Login successful\n";
                         success = true;
                         typ=rs.getString(4);
-                        id=""+rs.getInt(3);
+                        id=rs.getInt(3);
                         //con.close();
                     } else {
                         z = "Invalid Credentials!";
@@ -419,11 +427,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
                 Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
-                try {
+                /*try {
                     con.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
-                }
+                }*/
                 next(typ,id);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
