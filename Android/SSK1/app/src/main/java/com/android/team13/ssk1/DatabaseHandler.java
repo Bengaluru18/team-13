@@ -9,11 +9,17 @@ class DatabaseHandler {
     public DatabaseHandler(int id){
         this.id=id;
     }
-    int id;
+    public DatabaseHandler(String t){ty=t;}
+    int id;String ty;
     //Connection con;
     public List<String> getAllLabels(){
         List<String> labels = new ArrayList<String>();
-        String se="select dat from app where doc_id="+id;
+        String se;
+        if (ty.equals("del"))
+            se="select dat from app where stat='NA';";
+        else
+        se="select dat from app where doc_id="+id;
+
         System.out.println(se);
        try{ Statement stmt = new Connect().getCon().createStatement();
         ResultSet rs = stmt.executeQuery(se);
@@ -22,5 +28,17 @@ class DatabaseHandler {
             labels.add(rs.getString(1));
         }}catch (Exception e){e.printStackTrace();}
         return labels;
+    }
+
+    public List<String>[] getAllLabels1(){
+        List<String>[] st;
+        st = new List[4];
+
+        List<String> s1=new ArrayList<String>();
+        List<String> s2=new ArrayList<String>();
+        List<String> s3=new ArrayList<String>();
+        List<String> s4=new ArrayList<String>();
+
+        String se1="select nam from register"
     }
 }

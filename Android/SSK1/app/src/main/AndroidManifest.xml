@@ -25,7 +25,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".DocActivity"></activity>
+        <activity android:name=".DocActivity" />
+        <activity android:name=".dell" />
+        <activity android:name=".vi" />
+        <activity android:name=".appoint" />
+        <activity android:name=".ben"></activity>
     </application>
 
 </manifest>
