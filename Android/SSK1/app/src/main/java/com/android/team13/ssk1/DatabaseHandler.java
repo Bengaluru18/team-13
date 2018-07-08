@@ -16,7 +16,7 @@ class DatabaseHandler {
         List<String> labels = new ArrayList<String>();
         String se;
         if (ty.equals("del"))
-            se="select dat from app where stat='NA';";
+            se="select app_id from app where stat='NA';";
         else
         se="select dat from app where doc_id="+id;
 
@@ -30,7 +30,7 @@ class DatabaseHandler {
         return labels;
     }
 
-    public List<String>[] getAllLabels1(){
+  /*  public List<String>[] getAllLabels1(){
         List<String>[] st;
         st = new List[4];
 
@@ -40,5 +40,5 @@ class DatabaseHandler {
         List<String> s4=new ArrayList<String>();
 
         String se1="select nam from register"
-    }
+    }*/
 }

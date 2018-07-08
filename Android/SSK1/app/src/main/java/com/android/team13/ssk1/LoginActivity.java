@@ -328,9 +328,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             i.putExtras(bundle);
         startActivity(i);
         }
-        /*else if (type.equals("fss"))
-            {i=new Intent(this,MainActivity.class);i.putExtras(bundle);}
-        else
+        else if (type.equals("fss"))
+            {i=new Intent(this,MainActivity.class);i.putExtras(bundle);
+
+            startActivity(i);}
+        else if (type.equals("resp"))
+        {i=new Intent(this,Recep.class);i.putExtras(bundle);
+
+            startActivity(i);}
+       /* else
             {i=new Intent(this,Re)*/
 
 

@@ -29,7 +29,10 @@
         <activity android:name=".dell" />
         <activity android:name=".vi" />
         <activity android:name=".appoint" />
-        <activity android:name=".ben"></activity>
+        <activity android:name=".ben" />
+        <activity android:name=".Reg" />
+        <activity android:name=".viewrecep" />
+        <activity android:name=".Recep"></activity>
     </application>
 
 </manifest>
