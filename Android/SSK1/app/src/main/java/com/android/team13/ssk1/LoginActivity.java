@@ -320,6 +320,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Bundle bundle = new Bundle();
         bundle.putInt("id",id);
         bundle.putString("type", type);
+        Connect.typ=type;
 
           //Send the officer id detail to next activity
 

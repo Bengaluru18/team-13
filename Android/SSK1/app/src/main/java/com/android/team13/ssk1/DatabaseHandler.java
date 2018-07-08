@@ -15,9 +15,7 @@ class DatabaseHandler {
     public List<String> getAllLabels(){
         List<String> labels = new ArrayList<String>();
         String se;
-        if (ty.equals("del"))
-            se="select app_id from app where stat='NA';";
-        else
+
         se="select dat from app where doc_id="+id;
 
         System.out.println(se);

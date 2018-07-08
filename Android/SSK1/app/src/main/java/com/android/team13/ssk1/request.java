@@ -40,7 +40,7 @@ public class request extends AppCompatActivity {
         t4 = (TextView)findViewById(R.id.textView17);
         //r5=(Spinner)findViewById(R.id.spinner13) ;
         Bundle b=getIntent().getExtras();
-        ty=b.getString("type");
+        ty=Connect.typ;//b.getString("type");
         br=(Button)findViewById(R.id.button11);
         q1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -99,15 +99,18 @@ public class request extends AppCompatActivity {
                     r = con.prepareStatement("select app_id from app where doc_id="+a2+" and dat='"+a3+"' and sl_no="+a4).executeQuery();
 
                 ResultSet r1=con.prepareStatement("select app_id from app where reg_no="+a1+" and dat='"+a3+"' and sl_no="+a4).executeQuery();
-
-                if(r.next() || r1.next())
+                boolean x=r.next(),y=r1.next();
+                    //Toast.makeText(request.this, "bool "+x+"  "+y, Toast.LENGTH_LONG).show();
+                if(x || y)
                     Toast.makeText(request.this, "Cannot book", Toast.LENGTH_LONG).show();
                 else
                 {
                     if (ty.equals("fss"))
-                        con.prepareStatement("insert into app values("+a2+",'"+a3+"',"+a1+","+a4+",'A','B','A')");
+                        con.prepareStatement("insert into app values("+a2+",'"+a3+"',"+a1+","+a4+",'A','B','A')").execute();
                     else
-                        con.prepareStatement("insert into app values("+a2+",'"+a3+"',"+a1+","+a4+",'P','NB','P')");
+                        con.prepareStatement("insert into app values("+a2+",'"+a3+"',"+a1+","+a4+",'P','NB','P')").execute();
+
+                    Toast.makeText(request.this, "BOOKED", Toast.LENGTH_LONG).show();
                 }} catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -120,7 +123,7 @@ public class request extends AppCompatActivity {
     private void load(){
         List<String> lables[] = new ArrayList[5];
         Connection con = new Connect().getCon();
-        String qq1="select reg_no from register",qq2="select id from staff",qq3="select dat from ava",qq4="select sl_no from slot";
+        String qq1="select reg_no from register",qq2="select id from staff",qq3="select adat from ava",qq4="select sl_no from slot";
         //System.out.println(q);
         ResultSet rs1;
         for (int j=0;j<4;j++)
@@ -136,7 +139,7 @@ public class request extends AppCompatActivity {
         }
         rs1=con.prepareStatement(qq3).executeQuery();
         while (rs1.next()){
-            lables[2].add(""+rs1.getInt(1));
+            lables[2].add(""+rs1.getString(1));
         }
         rs1=con.prepareStatement(qq4).executeQuery();
         while (rs1.next()){

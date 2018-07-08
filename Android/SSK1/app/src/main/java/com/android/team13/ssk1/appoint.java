@@ -101,7 +101,7 @@ public class appoint extends AppCompatActivity implements AdapterView.OnItemSele
             @Override
             public void onClick(View view) {
                 Connection con = new Connect().getCon();
-                String q="update app set approve='A',stat='A' where app_id="+a5;
+                String q="update app set approve='A',stat='A',book='B' where app_id="+a5;
                 System.out.println(q);
                 try {
                     con.prepareStatement(q).execute();

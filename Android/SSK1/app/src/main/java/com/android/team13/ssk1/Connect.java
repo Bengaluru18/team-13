@@ -14,6 +14,7 @@ public class Connect {
         connectionclass();
     }
 
+    public static String typ;
 
     private Connection con;
     @SuppressLint("NewApi")

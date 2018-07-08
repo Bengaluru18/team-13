@@ -64,14 +64,14 @@ public class viewrecep extends AppCompatActivity implements AdapterView.OnItemSe
                                long id) {
         // On selecting a spinner item
         String label = parent.getItemAtPosition(position).toString();
-        String se="select dat,sl_no,doc_id from app where reg_no="+label.split(" ")[0];
+        String se="select dat,sl_no,doc_id,approve from app where reg_no="+label.split(" ")[0];
         System.out.println(se);
         try{
             Statement stmt = new Connect().getCon().createStatement();
             ResultSet rs = stmt.executeQuery(se);
             int i=0;String s;
             while (rs.next() && i<5){
-                s=rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3);
+                s=rs.getString(1)+" Slot: "+rs.getString(2)+" DocID :"+rs.getString(3)+" AP: "+rs.getString(4);
                 switch (i){
                     case 0:t1.setText(s);break;
                     case 1:t2.setText(s);break;
