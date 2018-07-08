@@ -18,4 +18,9 @@
     <string name="parents_name">Parents name</string>
     <string name="phone">Phone</string>
     <string name="register">Register</string>
+    <string name="sign">Sign IN</string>
+    <string name="r1">Reg ID</string>
+    <string name="r2">Doctor ID</string>
+    <string name="t3">Date</string>
+    <string name="as">slot</string>
 </resources>

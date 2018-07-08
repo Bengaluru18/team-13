@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".appoint">
-<Spinner
+
+    <Spinner
         android:id="@+id/spinner3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="64dp" />
+        android:layout_marginTop="64dp"
+         />
 
     <Spinner
         android:id="@+id/spinner4"
@@ -21,7 +23,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/spinner3"
-        android:layout_marginTop="59dp" />
+        android:layout_marginTop="59dp"
+         />
 
     <Spinner
         android:id="@+id/spinner5"
@@ -29,7 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+         />
 
     <Spinner
         android:id="@+id/spinner6"
@@ -38,7 +42,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/spinner5"
-        android:layout_marginTop="59dp" />
+        android:layout_marginTop="59dp"
+         />
 
     <Button
         android:id="@+id/button"
@@ -46,7 +51,24 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="66dp"
-        android:layout_marginStart="136dp"
+        android:layout_marginBottom="68dp"
+        android:layout_marginStart="54dp"
+        android:text="Approve" />
+
+    <Spinner
+        android:id="@+id/spinner8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
          />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button"
+        android:layout_marginEnd="47dp"
+        android:text="Reject" />
 </RelativeLayout>
