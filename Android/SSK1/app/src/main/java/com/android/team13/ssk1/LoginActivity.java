@@ -319,7 +319,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Intent i;
         Bundle bundle = new Bundle();
         bundle.putInt("id",id);
-        //bundle.putString("type", type);
+        bundle.putString("type", type);
 
           //Send the officer id detail to next activity
 

@@ -32,7 +32,8 @@
         <activity android:name=".ben" />
         <activity android:name=".Reg" />
         <activity android:name=".viewrecep" />
-        <activity android:name=".Recep"></activity>
+        <activity android:name=".Recep" />
+        <activity android:name=".request"></activity>
     </application>
 
 </manifest>

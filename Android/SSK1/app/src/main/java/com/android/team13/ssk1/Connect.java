@@ -19,6 +19,7 @@ public class Connect {
     @SuppressLint("NewApi")
     private  void connectionclass()
     {
+
         String server = "ip:port", database = "team13", user = "", password = "";
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

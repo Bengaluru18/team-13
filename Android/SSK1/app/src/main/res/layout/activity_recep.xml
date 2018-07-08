@@ -19,8 +19,15 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Registration" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="185dp"
-        android:text="Registration" />
+        android:layout_marginBottom="100dp"
+        android:text="Request Appointment" />
 </RelativeLayout>

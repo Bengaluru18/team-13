@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class Recep extends AppCompatActivity {
     Button b1;
-    Button b2;
+    Button b2,ba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +16,7 @@ public class Recep extends AppCompatActivity {
         setContentView(R.layout.activity_recep);
         b1=(Button)findViewById(R.id.button6);
         b2=(Button)findViewById(R.id.button8);
+        ba=(Button)findViewById(R.id.button10) ;
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,6 +28,13 @@ public class Recep extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Recep.this,Reg.class);
+                startActivity(i);
+            }
+        });
+        ba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Recep.this,request.class);
                 startActivity(i);
             }
         });
