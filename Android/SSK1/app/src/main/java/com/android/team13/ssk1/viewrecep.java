@@ -25,7 +25,7 @@ public class viewrecep extends AppCompatActivity implements AdapterView.OnItemSe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewrecep);
-
+        setTitle("View Appointments");
         t1=(TextView)findViewById(R.id.textView9);
         t2=(TextView)findViewById(R.id.textView10);
         t3=(TextView)findViewById(R.id.textView11);

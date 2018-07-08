@@ -27,6 +27,7 @@ public class appoint extends AppCompatActivity implements AdapterView.OnItemSele
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appoint);
+        setTitle("Approve Appointments");
         s1 = (Spinner)findViewById(R.id.spinner3);
         s2 = (Spinner)findViewById(R.id.spinner4);
         s3 = (Spinner)findViewById(R.id.spinner5);

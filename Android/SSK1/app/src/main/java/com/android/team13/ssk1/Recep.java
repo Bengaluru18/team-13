@@ -14,6 +14,7 @@ public class Recep extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recep);
+        setTitle("Receptionist Portal");
         b1=(Button)findViewById(R.id.button6);
         b2=(Button)findViewById(R.id.button8);
         ba=(Button)findViewById(R.id.button10) ;

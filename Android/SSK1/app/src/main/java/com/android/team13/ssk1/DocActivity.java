@@ -23,7 +23,7 @@ public class DocActivity extends AppCompatActivity implements AdapterView.OnItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc);
-        setTitle("Doctor View");
+        setTitle("Medical Professional View");
         t=(TextView)findViewById(R.id.textView23) ;
         // Spinner element
         spinner = (Spinner) findViewById(R.id.spinner);

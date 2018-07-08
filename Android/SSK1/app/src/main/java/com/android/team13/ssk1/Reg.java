@@ -27,7 +27,7 @@ public class Reg extends AppCompatActivity {
         e2=(EditText)findViewById(R.id.editText2);
         e3=(EditText)findViewById(R.id.editText3);
         e4=(EditText)findViewById(R.id.editText4);
-
+        setTitle("Register Portal");
         b=(Button)findViewById(R.id.button7);
         b.setOnClickListener(new View.OnClickListener() {
             @Override

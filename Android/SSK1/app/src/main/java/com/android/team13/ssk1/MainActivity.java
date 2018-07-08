@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("FSS Portal");
         b1 = (Button)findViewById(R.id.button2);
         //b2 = (Button)findViewById(R.id.button3);
         b3 = (Button)findViewById(R.id.button4);

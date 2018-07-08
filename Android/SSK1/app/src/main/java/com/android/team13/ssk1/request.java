@@ -30,6 +30,7 @@ public class request extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
+        setTitle("Request Appointments");
         q1 = (Spinner)findViewById(R.id.spinner9);
         q2 = (Spinner)findViewById(R.id.spinner10);
         q3 = (Spinner)findViewById(R.id.spinner11);
